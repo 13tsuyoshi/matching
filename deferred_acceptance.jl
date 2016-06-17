@@ -1,7 +1,4 @@
 function deferred_acceptance(m_prefs::Array{Int64},f_prefs::Array{Int64})
-m_prefs = m_prefs
-f_prefs = f_prefs
-
 m_prefs = m_prefs'
 f_prefs = f_prefs'    
 
@@ -22,8 +19,8 @@ while sum(is_single_prop) != 0#独身の男たちがいる間は
                     end
                     current_prop[f] = m#fの付き合っている人をmにする
                     is_single_prop[m] = false#mを独身でなくさせる
-                next_resp[m] += 1#次の求婚対象の女を次の順位の女にする
                 end
+            next_resp[m] += 1#次の求婚対象の女を次の順位の女にする
             end
     end
 end
@@ -35,4 +32,7 @@ end
 f_matched = current_prop
     
     return m_matched,f_matched
+
+
+
 end
